@@ -2,22 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/mistral-vibe/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="BuhAI - Transform your business with cutting-edge AI solutions. We create intelligent applications that learn, adapt, and grow with your business." />
-    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, AI Solutions, AI Development, Data Analytics, BuhAI" />
-    <meta name="author" content="BuhAI" />
-    <meta property="og:title" content="BuhAI - AI Solutions for Your Business" />
-    <meta property="og:description" content="Transform your business with cutting-edge AI solutions. We create intelligent applications that learn, adapt, and grow with your business." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://raisudezu.github.io/mistral-vibe/" />
+    <meta name="description" content="BuhAI - Transform your business with cutting-edge AI solutions" />
     <title>BuhAI - AI Solutions for Your Business</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { 
+        font-family: 'Inter', system-ui, sans-serif; 
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .loading {
+        text-align: center;
+        color: #0ea5e9;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(14, 165, 233, 0.2);
+        border-top-color: #0ea5e9;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/mistral-vibe/src/main.jsx"></script>
+    <div id="root">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading BuhAI Website...</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

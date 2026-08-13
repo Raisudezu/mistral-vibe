@@ -21,6 +21,14 @@ jobs:
       - name: Build
         run: npm run build
         
+      - name: Fix for GitHub Pages
+        run: |
+          # Copy index.html to 404.html for client-side routing
+          cp index.html 404.html
+          # Add base path to index.html
+          sed -i 's/src\/main.jsx/\/mistral-vibe\/src\/main.jsx/g' index.html
+          sed -i 's/src\/main.jsx/\/mistral-vibe\/src\/main.jsx/g' 404.html
+          
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
