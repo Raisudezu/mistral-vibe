@@ -25,10 +25,16 @@ jobs:
         working-directory: ./buhai-website
         run: npm run build
         
+      - name: Move files to root for GitHub Pages
+        run: |
+          mkdir -p ../deploy
+          cp -r ./buhai-website/dist/* ../deploy/
+          cp ./buhai-website/dist/.gitignore ../deploy/ 2>/dev/null || true
+          
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./buhai-website/dist
-          destination_dir: buhai-website
+          publish_dir: ../deploy
+          destination_dir: .
           keep_files: false
